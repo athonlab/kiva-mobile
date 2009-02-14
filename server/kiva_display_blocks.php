@@ -11,7 +11,7 @@ function _show_loan($loan) {
   <layout-items>
     <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
     <block class="title"><?php echo $loan['name'] ?></block>
-    <block class="subtext"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
+    <block class="subdued"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
     <block class="subtext" lines="1"><?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
   </layout-items>
   <load-page event="activate" page="/loan_detail.php?show=<?php echo $loan['id'] ?>" />
@@ -54,14 +54,14 @@ function _show_lender_detail($lender) {
 <placard layout="card">
   <layout-items>
     <image resource="<?php _show_image($lender['image']) ?>" size="large"/>
-    <block class="name"><?php echo htmlentities( $lender['name'] ) ?></block>
-    <block class="location"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo htmlentities( $lender['country_code'] ) ?></block>
-    <block class="personal_url"><?php echo htmlentities( $lender['personal_url'] ) ?></block>
-    <block class="occupation"><?php echo htmlentities( $lender['occupation'] ) ?></block>
-    <block class="occupation_info"><?php echo htmlentities( $lender['occupation_info'] ) ?></block>
-    <block class="loan_because"><?php echo htmlentities( $lender['loan_because'] ) ?></block>
-    <block class="loan_count"><?php echo htmlentities( $lender['loan_count'] ) ?></block>
-    <block class="invite_count"><?php echo htmlentities( $lender['invite_count'] ) ?></block>
+    <block class="title"><?php echo $lender['name'] ?></block>
+    <block class="subdued"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo $lender['country_code'] ?></block>
+    <block class="link"><?php echo $lender['personal_url'] ?></block>
+    <block class="description"><?php echo $lender['occupation'] ?></block>
+    <block class="description"><?php echo $lender['occupation_info'] ?></block>
+    <block class="description"><?php echo $lender['loan_because'] ?></block>
+    <block class="description"><?php echo $lender['loan_count'] ?></block>
+    <block class="description"><?php echo $lender['invite_count'] ?></block>
   </layout-items>
 </placard>
 <?
