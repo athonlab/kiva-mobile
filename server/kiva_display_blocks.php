@@ -97,6 +97,6 @@ function blueprintErrorHandler( $errno, $errstr, $errfile, $errline )
     exit();
   }
 }
-
+set_error_handler("blueprintErrorHandler");
 
 ?>
