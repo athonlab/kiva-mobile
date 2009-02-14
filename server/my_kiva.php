@@ -37,7 +37,7 @@ foreach($json_decoded['lenders'] as $lender) {
 <module>
 <header layout="simple">
   <layout-items>
-    <block class="title">Loans</block>
+    <block class="title">Loans Given</block>
   </layout-items>
 </header>
 

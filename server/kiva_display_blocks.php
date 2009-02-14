@@ -11,8 +11,8 @@ function _show_loan($loan) {
   <layout-items>
     <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
     <block class="title"><?php echo $loan['name'] ?></block>
-    <block class="subdued"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
-    <block class="subtext" lines="1"><?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
+    <block class="subdued"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town']  ?></block>
+    <block class="subtext" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
   </layout-items>
   <load-page event="activate" page="/loan_detail.php?show=<?php echo $loan['id'] ?>" />
 </placard>
@@ -53,15 +53,12 @@ function _show_lender_detail($lender) {
 ?>
 <placard layout="card">
   <layout-items>
-    <image resource="<?php _show_image($lender['image']) ?>" size="large"/>
+    <image resource="<?php _show_image($lender['image']) ?>" size="x-large"/>
     <block class="title"><?php echo $lender['name'] ?></block>
-    <block class="subdued"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo $lender['country_code'] ?></block>
+    <block class="subdued"><?php echo $lender['whereabout'] ?>, <?php echo $lender['country_code'] ?></block>
     <block class="link"><?php echo $lender['personal_url'] ?></block>
-    <block class="description"><?php echo $lender['occupation'] ?></block>
-    <block class="description"><?php echo $lender['occupation_info'] ?></block>
+    <block class="description"><?php echo $lender['occupation'] ?>: <em><?php echo $lender['occupation_info'] ?></em></block>
     <block class="description"><?php echo $lender['loan_because'] ?></block>
-    <block class="description"><?php echo $lender['loan_count'] ?></block>
-    <block class="description"><?php echo $lender['invite_count'] ?></block>
   </layout-items>
 </placard>
 <?
