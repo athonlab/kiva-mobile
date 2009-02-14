@@ -10,9 +10,9 @@
   // http://info.yahoo.com/legal/us/yahoo/mobilewidgetdvlpr/mobilewidgetdvlpr-2070.html
 
   // Make sure we set the right content type
-  #header( "Content-Type: application/x-blueprint+xml" );
+  header( "Content-Type: application/x-ywidget+xml" );
   // Make sure not to cache. The Java client really cares.
-  #header( "Cache-Control: no-cache" );
+  header( "Cache-Control: no-cache" );
   // Turn on debug output - only stops on errors, not warnings.
   set_error_handler("blueprintErrorHandler");
   
