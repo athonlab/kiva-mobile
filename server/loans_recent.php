@@ -14,12 +14,13 @@ $json_request_url = "http://api.kivaws.org/v1/loans/newest.json?$query_params" .
 // echo "$request_url\n\n";
 $json_response = file_get_contents($json_request_url);
 
-include('json_error_handling.php');
+  include('json_error_handling.php');
 
 $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
 ?>
+
 <module>
   <header layout="simple">
     <layout-items>
@@ -27,7 +28,7 @@ $json_decoded = json_decode($json_response, true);
     </layout-items>
   </header>
 
-<?
+<?php
 foreach($json_decoded['loans'] as $loan) {
   //print_r($loan);
   // echo "/loan_detail?show=$load_id";
@@ -36,7 +37,9 @@ foreach($json_decoded['loans'] as $loan) {
   _show_loan($loan);
 }
 ?>
+
 </module>
-<?
+
+<?php
  include('bpxml-footer.php');
 ?>

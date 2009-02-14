@@ -7,12 +7,12 @@ function _show_image($image, $size = '80w80h') {
 
 function _show_loan($loan) {
 ?>
-<placard layout="card">
+<placard layout="card" class="link">
   <layout-items>
     <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
-    <block class="title"><?php echo htmlentities( $loan['name'] ) ?></block>
+    <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
-    <block class="subtext" lines="1"><?php echo htmlentities( $loan['loan_amount'] ) ?> needed; <?php echo htmlentities( $loan['use'] ) ?></block>
+    <block class="subtext" lines="1"><?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
   </layout-items>
   <load-page event="activate" page="/loan_detail.php?show=<?php echo $loan['id'] ?>" />
 </placard>
