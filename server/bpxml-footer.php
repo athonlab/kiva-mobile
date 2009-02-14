@@ -1,0 +1,14 @@
+<?php
+// bpxml footer
+?>
+
+  </content>
+  
+  <page-footer>
+    <placard layout='simple'>
+      <layout-items>
+        <block>Copyleft 2009. No rights reserved</block>
+      </layout-items>
+    </placard>
+  </page-footer>
+</page>

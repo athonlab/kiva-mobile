@@ -18,13 +18,26 @@ $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
 
+ include('bpxml-header.php');
+?>
+<module>
+  <header layout="simple">
+    <layout-items>
+      <block class="title">Home</block>
+    </layout-items>
+  </header>
+
+<?
 foreach($json_decoded['loans'] as $loan) {
   //print_r($loan);
   // echo "/loan_detail?show=$load_id";
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
-  // http://www.kiva.org/img/80w80h/<id>.jpg 
+  // http://www.kiva.org/img/80w80h/<id>.jpg
   _show_loan($loan);
-  $load_id = $loan['id'];
 }
 
+?>
+</module>
+<?
+ include('bpxml-footer.php');
 ?>

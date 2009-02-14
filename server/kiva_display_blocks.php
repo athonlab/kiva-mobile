@@ -7,65 +7,75 @@ function _show_image($image, $size = '80w80h') {
 
 function _show_loan($loan) {
 ?>
-<layout-items>
-  <image resource="<?php _show_image($loan['image']) ?>" size="small"/>
-  <block class="name"><?php echo htmlentities( $loan['name'] ) ?></block>
-  <block class="location"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
-  <block class="activity"><?php echo htmlentities( $loan['activity'] ) ?></block>
-  <block class="loan_amount"><?php echo htmlentities( $loan['loan_amount'] ) ?></block>
-</layout-items>
+<placard layout="card">
+  <layout-items>
+    <image resource="<?php _show_image($loan['image']) ?>" size="small"/>
+    <block class="title"><?php echo htmlentities( $loan['name'] ) ?></block>
+    <block class="subtext"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
+    <block class="subtext" lines="1"><?php echo htmlentities( $loan['loan_amount'] ) ?> needed; <?php echo htmlentities( $loan['use'] ) ?></block>
+  </layout-items>
+  <load event="activate" resource="http://kivamail.socialsync.org/loan_detail.php?show=<?php echo $loan['id'] ?>" />
+</placard>
 <?
 }
 
 function _show_loan_detail($loan) {
 ?>
-<layout-items>
-  <image resource="<?php _show_image($loan[image]) ?>" size="large"/>
-  <block class="name"><?php echo htmlentities( $loan['name'] ) ?></block>
-  <block class="status"><?php echo htmlentities( $loan['status'] ) ?></block>
-  <block class="loan_amount"><?php echo htmlentities( $loan['loan_amount'] ) ?></block>
-  <block class="funded_amount"><?php echo htmlentities( $loan['funded_amount'] ) ?></block>
-  <block class="activity"><?php echo htmlentities( $loan['activity'] ) ?></block>
-  <block class="use"><?php echo htmlentities( $loan['use'] ) ?></block>
-  <block class="location"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
-</layout-items>
+<placard layout="card">
+  <layout-items>
+    <image resource="<?php _show_image($loan[image]) ?>" size="large"/>
+    <block class="name"><?php echo htmlentities( $loan['name'] ) ?></block>
+    <block class="status"><?php echo htmlentities( $loan['status'] ) ?></block>
+    <block class="loan_amount"><?php echo htmlentities( $loan['loan_amount'] ) ?></block>
+    <block class="funded_amount"><?php echo htmlentities( $loan['funded_amount'] ) ?></block>
+    <block class="activity"><?php echo htmlentities( $loan['activity'] ) ?></block>
+    <block class="use"><?php echo htmlentities( $loan['use'] ) ?></block>
+    <block class="location"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
+  </layout-items>
+</placard>
 <?  
 }
 
 function _show_lender($lender) {
 ?>
-<layout-items>
-  <image resource="<?php _show_image($lender['image']) ?>" size="small"/>
-  <block class="name"><?php echo htmlentities( $lender['name'] ) ?></block>
-  <block class="location"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo htmlentities( $lender['country_code'] ) ?></block>
-  <block class="loan_count"><?php echo htmlentities( $lender['loan_count'] ) ?></block>
-</layout-items>
+<placard layout="card">
+  <layout-items>
+    <image resource="<?php _show_image($lender['image']) ?>" size="small"/>
+    <block class="name"><?php echo htmlentities( $lender['name'] ) ?></block>
+    <block class="location"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo htmlentities( $lender['country_code'] ) ?></block>
+    <block class="loan_count"><?php echo htmlentities( $lender['loan_count'] ) ?></block>
+  </layout-items>
+</placard>
 <?  
 }
 
 function _show_lender_detail($lender) {
 ?>
-<layout-items>
-  <image resource="<?php _show_image($lender['image']) ?>" size="large"/>
-  <block class="name"><?php echo htmlentities( $lender['name'] ) ?></block>
-  <block class="location"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo htmlentities( $lender['country_code'] ) ?></block>
-  <block class="personal_url"><?php echo htmlentities( $lender['personal_url'] ) ?></block>
-  <block class="occupation"><?php echo htmlentities( $lender['occupation'] ) ?></block>
-  <block class="occupation_info"><?php echo htmlentities( $lender['occupation_info'] ) ?></block>
-  <block class="loan_because"><?php echo htmlentities( $lender['loan_because'] ) ?></block>
-  <block class="loan_count"><?php echo htmlentities( $lender['loan_count'] ) ?></block>
-  <block class="invite_count"><?php echo htmlentities( $lender['invite_count'] ) ?></block>
-</layout-items>
-<?    
+<placard layout="card">
+  <layout-items>
+    <image resource="<?php _show_image($lender['image']) ?>" size="large"/>
+    <block class="name"><?php echo htmlentities( $lender['name'] ) ?></block>
+    <block class="location"><?php echo htmlentities( $lender['whereabout'] ) ?>, <?php echo htmlentities( $lender['country_code'] ) ?></block>
+    <block class="personal_url"><?php echo htmlentities( $lender['personal_url'] ) ?></block>
+    <block class="occupation"><?php echo htmlentities( $lender['occupation'] ) ?></block>
+    <block class="occupation_info"><?php echo htmlentities( $lender['occupation_info'] ) ?></block>
+    <block class="loan_because"><?php echo htmlentities( $lender['loan_because'] ) ?></block>
+    <block class="loan_count"><?php echo htmlentities( $lender['loan_count'] ) ?></block>
+    <block class="invite_count"><?php echo htmlentities( $lender['invite_count'] ) ?></block>
+  </layout-items>
+</placard>
+<?
 }
 
 function _show_journal_entry($journal_entry) {
 ?>
+<placard layout="card">
   <layout-items>
     <block class="subject"><?php echo htmlentities( $journal_entry['subject'] ) ?></block>
     <block class="body"><?php echo htmlentities( $journal_entry['body'] ) ?>, <?php echo htmlentities( $journal_entry['country_code'] ) ?></block>
     <block class="date"><?php echo htmlentities( $journal_entry['date'] ) ?></block>
   </layout-items>
+</placard>
 <?
 }
 
