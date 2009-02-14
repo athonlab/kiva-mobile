@@ -1,5 +1,7 @@
 <?php
 require_once('kiva_display_blocks.php');
+include('bpxml-header.php');
+
 // Query params
 $query_params = '';
 
@@ -17,13 +19,11 @@ include('json_error_handling.php');
 $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
-
- include('bpxml-header.php');
 ?>
 <module>
   <header layout="simple">
     <layout-items>
-      <block class="title">Home</block>
+      <block class="title">Recent Loans</block>
     </layout-items>
   </header>
 
@@ -35,7 +35,6 @@ foreach($json_decoded['loans'] as $loan) {
   // http://www.kiva.org/img/80w80h/<id>.jpg
   _show_loan($loan);
 }
-
 ?>
 </module>
 <?

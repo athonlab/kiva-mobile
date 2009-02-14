@@ -1,4 +1,4 @@
-<?
+<?php
 // bpxml header
 // Make sure we set the right content type
 header( "Content-Type: application/x-ywidget+xml" );

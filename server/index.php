@@ -1,7 +1,6 @@
 <?php
   require_once('kiva_display_blocks.php');
-
- include('bpxml-header.php');
+  include('bpxml-header.php');
 ?>
 
     <module>
@@ -15,19 +14,19 @@
          <layout-items>
            <block class='title'>My Kiva</block>
          </layout-items>
-         <load event='activate' resource='http://kivamobile.socialsync.org/my_kiva.php' />
+         <load-page event='activate' page='/my_kiva.php' />
        </placard>
        <placard layout='simple' class='link'>
          <layout-items>
            <block class='title'>Recent Loans</block>
          </layout-items>
-         <load event='activate' resource='http://kivamobile.socialsync.org/loans_recent.php' />
+         <load-page event='activate' page='/loans_recent.php' />
        </placard>
        <placard layout='simple' class='link'>
          <layout-items>
            <block class='title'>Search Loans</block>
          </layout-items>
-         <load event='activate' resource='http://kivamobile.socialsync.org/loans_search.php' />
+         <load-page event='activate' page='/loans_search.php' />
        </placard>
     </module>
 

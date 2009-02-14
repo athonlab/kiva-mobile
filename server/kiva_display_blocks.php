@@ -9,12 +9,12 @@ function _show_loan($loan) {
 ?>
 <placard layout="card">
   <layout-items>
-    <image resource="<?php _show_image($loan['image']) ?>" size="small"/>
+    <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
     <block class="title"><?php echo htmlentities( $loan['name'] ) ?></block>
     <block class="subtext"><?php echo htmlentities( $loan['location']['country'] ) ?>, <?php echo htmlentities( $loan['location']['town'] ) ?></block>
     <block class="subtext" lines="1"><?php echo htmlentities( $loan['loan_amount'] ) ?> needed; <?php echo htmlentities( $loan['use'] ) ?></block>
   </layout-items>
-  <load event="activate" resource="http://kivamail.socialsync.org/loan_detail.php?show=<?php echo $loan['id'] ?>" />
+  <load-page event="activate" page="/loan_detail.php?show=<?php echo $loan['id'] ?>" />
 </placard>
 <?
 }
