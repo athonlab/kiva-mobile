@@ -1,10 +1,22 @@
 <?php
 
-// Code goes here!
-$page_no = $_GET['page'];
-$request_url = "http://api.kivaws.org/v1/loans/newest.json?page=$page_no";
+// Query params
+if (isset($_GET['page'])) {
+  $page_no = $_GET['page'];
+} else {
+  $page_no = 1;
+}
 
-$json = file_get_contents($request_url);
-var_dump(json_decode($json, true));
+$json_request_url = "http://api.kivaws.org/v1/loans/newest.json?page=$page_no";
+// echo "$request_url\n\n";
+$json_response = file_get_contents($json_request_url);
+$json_decoded = json_decode($json_response, true);
+
+//print_r($json_decoded);
+
+foreach($json_decoded['loans'] as $loan) {
+  print_r($loan);
+  exit;
+}
 
 ?>
