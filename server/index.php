@@ -11,9 +11,8 @@
       error_log("$header: $value");
   }
 
-  echo "<?xml version='1.0' encoding='UTF-8'?>";
-
   $xml = "
+  <?xml version='1.0' encoding='UTF-8'?>
     <page style='collection'>
      <page-header>
      <back-title> Kiva mobile </back-title>
@@ -60,13 +59,14 @@
      </content>
 
       <page-footer>
-          <placard layout='simple'>  
+        <placard layout='simple'>
          <layout-items>  
            <block>Copyleft 2009. No rights reserved</block>  
          </layout-items>
        </placard>
       </page-footer>
     </page>
+  </xml>
   ";
   print_r($xml);
 ?>
