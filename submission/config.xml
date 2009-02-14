@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://mobile.yahoo.com/widgets/schema/1.0/config/ http://mobile.yahoo.com/widgets/schema/1.0/config/"
+	xmlns="http://mobile.yahoo.com/widgets/schema/1.0/config/">
+	<title>Kiva Mobile application</title>
+	<version>1.0</version>
+	<identifier>kiva-mobile</identifier>
+	<description>The un-official Kiva Mobile application</description>
+	<icon>icon</icon>
+	<author organization="SocialSync" href="http://socialsync.org"
+		email="akshay@socialsync.org">
+		Akshay Surve
+	</author>
+	
+	<!-- change this widget base to your server url -->
+	<widget base="http://kivamobile.socialsync.org">
+		<preview>
+			<icon>icon</icon>
+			<label>Kiva Mobile</label>
+		</preview>
+
+		<shortcuts>
+			<item default="true">
+				<label>Open</label>
+				<href>index.php</href>
+			</item>
+		</shortcuts>
+	</widget>
+</config>
