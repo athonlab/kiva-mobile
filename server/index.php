@@ -16,7 +16,6 @@
     <back-title> Kiva mobile </back-title>
 
     <title-bar>
-      <logo resource='http://kivamobile.socialsync.org/images/km-logo16.png'/>
       <title>Kiva Mobile</title>
        <commands>
          <ui-command>
