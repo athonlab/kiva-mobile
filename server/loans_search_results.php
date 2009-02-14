@@ -1,5 +1,5 @@
 <?php
-
+require_once('kiva_display_blocks.php');
 $query_params = '';
 
 // filters
@@ -52,8 +52,8 @@ $json_decoded = json_decode($json_response, true);
 //print_r($json_decoded);
 
 foreach($json_decoded['loans'] as $loan) {
-  print_r($loan);
+  //print_r($loan);
   // http://www.kiva.org/img/80w80h/<id>.jpg 
-  exit;
+  _show_loan($loan);
 }
 ?>

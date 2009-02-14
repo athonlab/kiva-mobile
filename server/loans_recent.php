@@ -1,5 +1,5 @@
 <?php
-
+require_once('kiva_display_blocks.php');
 // Query params
 $query_params = '';
 
@@ -19,12 +19,12 @@ $json_decoded = json_decode($json_response, true);
 //print_r($json_decoded);
 
 foreach($json_decoded['loans'] as $loan) {
-  print_r($loan);
-  $load_id = $loan['id'];
-  echo "/loan_detail?show=$load_id";
+  //print_r($loan);
+  // echo "/loan_detail?show=$load_id";
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
-  exit;
+  _show_loan($loan);
+  $load_id = $loan['id'];
 }
 
 ?>
