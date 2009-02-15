@@ -1,6 +1,6 @@
 <?php
 require_once('kiva_display_blocks.php');
-$query_params = '';
+include('bpxml-header.php');
 
 // filters
 if (isset($_GET['status'])) {
@@ -50,10 +50,27 @@ include('json_error_handling.php');
 $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
+?>
 
+<module>
+  <header layout="simple">
+    <layout-items>
+      <block class="title">Search results</block>
+    </layout-items>
+  </header>
+
+<?php
 foreach($json_decoded['loans'] as $loan) {
   //print_r($loan);
-  // http://www.kiva.org/img/80w80h/<id>.jpg 
+  // echo "/loan_detail?show=$load_id";
+  // http://kiva.org/app.php?page=businesses&action=about&id=<id>
+  // http://www.kiva.org/img/80w80h/<id>.jpg
   _show_loan($loan);
 }
+?>
+
+</module>
+
+<?php
+ include('bpxml-footer.php');
 ?>
