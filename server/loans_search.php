@@ -15,10 +15,6 @@ foreach ($headers as $header => $value) {
     <model id='page'>
      <instance>
       <data xmlns=''>
-       <status/>
-       <gender/>
-       <sector/>
-       <country_code/>
        <q/>
       </data>
      </instance>
@@ -48,7 +44,7 @@ foreach ($headers as $header => $value) {
         <block class="title">Search</block>
       </layout-items>
     </header>
-
+    <!--
      <input ref='status' appearance='compact' model='page'>
        <label>Status</label>
        <placeholder>fundraising, funded, in_repayment, paid, defaulted</placeholder>
@@ -73,6 +69,12 @@ foreach ($headers as $header => $value) {
 
     <input ref='sector' appearance='compact' model='page'>
       <label>Sector</label>
+      <placeholder></placeholder>
+    </input>
+    -->
+    
+    <input ref='q' appearance='compact' model='page'>
+      <label>Query</label>
       <placeholder></placeholder>
     </input>
 
