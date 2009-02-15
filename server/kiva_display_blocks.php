@@ -29,7 +29,7 @@ function _show_loan($loan) {
     <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
     <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town']  ?></block>
-    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
+    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo strip_tags($loan['use']) ?></block>
   </layout-items>
   <load-page event="activate" page="/loan_detail.php?show=<?php echo $loan['id'] ?>" />
 </placard>
@@ -43,7 +43,7 @@ function _show_loan_detail($loan) {
     <image resource="<?php _show_image($loan[image]) ?>" size="xx-large"/>
     <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town'] ?></block>
-    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo $loan['use'] ?></block>
+    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo strip_tags($loan['use']) ?></block>
     <block class="status"><?php echo $loan['status'] ?></block>
     <block class="loan_amount"><?php echo $loan['loan_amount'] ?></block>
     <block class="funded_amount"><?php echo $loan['funded_amount'] ?></block>
@@ -74,7 +74,7 @@ function _show_lender_detail($lender) {
     <block class="title"><?php echo $lender['name'] ?></block>
     <block class="subdued"><?php echo $lender['whereabouts'] ?>, <?php echo $lender['country_code'] ?></block>
     <block class="link"><?php echo $lender['personal_url'] ?></block>
-    <block class="description"><?php echo $lender['occupation'] ?>: <em><?php echo $lender['occupation_info'] ?></em></block>
+    <block class="description"><?php echo strip_tags($lender['occupation']) ?>: <em><?php echo $lender['occupation_info'] ?></em></block>
     <block class="description"><?php echo $lender['loan_because'] ?></block>
   </layout-items>
 </placard>
@@ -86,7 +86,7 @@ function _show_journal_entry($journal_entry) {
 <placard layout="card">
   <layout-items>
     <block class="title"><?php echo $journal_entry['subject'] ?></block>
-    <block class="subtext"><?php echo $journal_entry['body'] ?></block>
+    <block class="subtext"><?php echo strip_tags($journal_entry['body']) ?></block>
   </layout-items>
 </placard>
 <?
