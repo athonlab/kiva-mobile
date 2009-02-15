@@ -5,6 +5,20 @@ function _show_image($image, $size = '80w80h') {
   echo "http://www.kiva.org/img/$size/$image_id.jpg";
 }
 
+function _show_loan_on_map($loan) {
+?>
+  <map-point>
+  <location>
+    <latitude>37.392916</latitude>
+    <longitude>-122.033934</longitude>
+  </location>
+<?php
+    _show_loan($loan);
+?>
+  </map-point>
+<?
+}
+
 function _show_loan($loan) {
 ?>
 <placard layout="card" class="link">
