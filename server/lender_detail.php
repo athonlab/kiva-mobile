@@ -24,7 +24,7 @@ $json_decoded = json_decode($json_response, true);
 <module>
   <header layout="simple">
     <layout-items>
-      <block class="title">My Kiva</block>
+      <block class="title">Lender Details</block>
     </layout-items>
   </header>
 
@@ -54,14 +54,29 @@ $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
 
+?>
+<map>
+  <center>
+    <latitude>8</latitude>
+    <longitude>2</longitude>
+  </center>
+  <map-zoom>15</map-zoom>
+  <map-mode>map</map-mode>
+  <map-showtraffic>false</map-showtraffic>
+<?
+
 foreach($json_decoded['loans'] as $loan) {
   // print_r($loan);
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
-  _show_loan($loan);
-
+  list($lat, $lon) = split(' ', $loan['location']['geo']['pairs']);
+  $country = $loan['location']['country'];
+  $city = $loan['location']['town'];
+    _show_loan_on_map($loan);
 }
 ?>
+</map>
+
 </module>
 </module>
 <?
