@@ -22,8 +22,8 @@ foreach ($headers as $header => $value) {
        <q/>
       </data>
      </instance>
-     <submission resource='/loans_search_results.php' method='get'/>
-     <setfocus control='q' event='page-ready' />
+     <submission resource='loans_search_results.php' method='get'/>
+     <setfocus control='country_code' event='page-ready' />
     </model>
   </models>
   
@@ -51,7 +51,7 @@ foreach ($headers as $header => $value) {
 
      <input ref='status' appearance='compact'>
        <label>Status</label>
-       <placeholder></placeholder>
+       <placeholder>fundraising, funded, in_repayment, paid, defaulted</placeholder>
      </input>
 
      <select ref='gender'>
@@ -68,12 +68,12 @@ foreach ($headers as $header => $value) {
 
     <input ref='country_code' appearance='compact'>
       <label>Country code</label>
-      <placeholder></placeholder>
+      <placeholder>PE,IN,GH,GT</placeholder>
     </input>
 
     <input ref='sector' appearance='compact'>
       <label>Sector</label>
-      <placeholder>Yahoo</placeholder>
+      <placeholder></placeholder>
     </input>
 
      <submit>
