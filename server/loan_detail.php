@@ -9,7 +9,7 @@ if (isset($_GET['show'])) {
   $loan_id = $_GET['show'];
 }
 
-$json_request_url = "http://api.kivaws.org/v1/lender/$loan_id" . ".json";
+$json_request_url = "http://api.kivaws.org/v1/loans/$loan_id" . ".json";
 // echo "$request_url\n\n";
 $json_response = file_get_contents($json_request_url);
 
