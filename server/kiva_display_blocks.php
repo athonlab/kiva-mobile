@@ -9,7 +9,7 @@ function _show_loan($loan) {
 ?>
 <placard layout="card" class="link">
   <layout-items>
-    <image resource="<?php _show_image($loan['image']) ?>" size="xx-large"/>
+    <image resource="<?php _show_image($loan['image']) ?>" size="small"/>
     <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town']  ?></block>
     <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
