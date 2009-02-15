@@ -26,8 +26,7 @@ function _show_loan_detail($loan) {
     <image resource="<?php _show_image($loan[image]) ?>" size="xx-large"/>
     <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town'] ?></block>
-    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
-    <block class="use"><?php echo $loan['use'] ?></block>
+    <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo $loan['use'] ?></block>
     <block class="status"><?php echo $loan['status'] ?></block>
     <block class="loan_amount"><?php echo $loan['loan_amount'] ?></block>
     <block class="funded_amount"><?php echo $loan['funded_amount'] ?></block>
