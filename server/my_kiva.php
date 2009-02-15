@@ -51,6 +51,16 @@ include('json_error_handling.php');
 $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
+?>
+<map>
+  <center>
+    <latitude>37.3919</latitude>
+    <longitude>-122.0302</longitude>
+  </center>
+  <map-zoom>10</map-zoom>
+  <map-mode>map</map-mode>
+  <map-showtraffic>false</map-showtraffic>
+<?
 
 foreach($json_decoded['loans'] as $loan) {
   // print_r($loan);
@@ -59,23 +69,11 @@ foreach($json_decoded['loans'] as $loan) {
   list($lat, $lon) = split(' ', $loan['location']['geo']['pairs']);
   $country = $loan['location']['country'];
   $city = $loan['location']['town'];
-?>
-  <map>
-    <center>
-      <latitude>37.3919</latitude>
-      <longitude>-122.0302</longitude>
-    </center>
-    <map-zoom>10</map-zoom>
-    <map-mode>map</map-mode>
-    <map-showtraffic>false</map-showtraffic>
-<?
     _show_loan_on_map($loan);
-?>
-  </map>
-<?
-
 }
 ?>
+</map>
+
 </module>
 </module>
 <?
