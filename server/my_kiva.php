@@ -56,7 +56,7 @@ foreach($json_decoded['loans'] as $loan) {
   // print_r($loan);
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
-  list($lat, $lon) = split(' - ', $loan['location']['geo']['pairs']);
+  list($lat, $lon) = split(' ', $loan['location']['geo']['pairs']);
   $country = $loan['location']['country'];
   $city = $loan['location']['town'];
 ?>
@@ -68,18 +68,9 @@ foreach($json_decoded['loans'] as $loan) {
     <map-zoom>10</map-zoom>
     <map-mode>map</map-mode>
     <map-showtraffic>false</map-showtraffic>
-    <map-point>
-    <location>
-      <latitude><? echo $lat ?></latitude>
-      <longitude><? echo $lon ?></longitude>
-      <city><? echo $city ?></city>
-      <country><? echo $country ?></country>
-    </location>
-    
 <?
     _show_loan_on_map($loan);
 ?>
-    </map-point>
   </map>
 <?
 

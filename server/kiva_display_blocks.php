@@ -7,10 +7,13 @@ function _show_image($image, $size = '80w80h') {
 
 function _show_loan_on_map($loan) {
 ?>
+
   <map-point>
   <location>
-    <latitude>37.392916</latitude>
-    <longitude>-122.033934</longitude>
+    <latitude><? echo $lat ?></latitude>
+    <longitude><? echo $lon ?></longitude>
+    <city><? echo $city ?></city>
+    <country><? echo $country ?></country>
   </location>
 <?php
     _show_loan($loan);
