@@ -6,6 +6,10 @@ function _show_image($image, $size = '80w80h') {
 }
 
 function _show_loan_on_map($loan) {
+  list($lat, $lon) = split(' ', $loan['location']['geo']['pairs']);
+  $country = $loan['location']['country'];
+  $city = $loan['location']['town'];
+
 ?>
 
   <map-point>

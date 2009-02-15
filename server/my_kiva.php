@@ -66,9 +66,6 @@ foreach($json_decoded['loans'] as $loan) {
   // print_r($loan);
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
-  list($lat, $lon) = split(' ', $loan['location']['geo']['pairs']);
-  $country = $loan['location']['country'];
-  $city = $loan['location']['town'];
     _show_loan_on_map($loan);
 }
 ?>
