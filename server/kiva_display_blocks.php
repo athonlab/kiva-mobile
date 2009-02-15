@@ -9,7 +9,7 @@ function _show_loan($loan) {
 ?>
 <placard layout="card" class="link">
   <layout-items>
-    <image resource="<?php _show_image($loan['image']) ?>" size="small"/>
+    <image resource="<?php _show_image($loan['image']) ?>" size="medium"/>
     <block class="title"><?php echo $loan['name'] ?></block>
     <block class="subtext"><?php echo $loan['location']['country'] ?>, <?php echo $loan['location']['town']  ?></block>
     <block class="subdued" lines="1">$<?php echo $loan['loan_amount'] ?> needed; <?php echo$loan['use'] ?></block>
@@ -40,11 +40,11 @@ function _show_lender($lender) {
 ?>
 <placard layout="card" class="link">
   <layout-items>
-    <image resource="<?php _show_image($lender['image']) ?>" size="small"/>
+    <image resource="<?php _show_image($lender['image']) ?>" size="medium"/>
     <block class="title"><?php echo $lender['name'] ?></block>
     <block class="subtext"><?php echo $lender['whereabouts'] ?>, <?php echo $lender['country_code'] ?></block>
   </layout-items>
-  <load-page event="activate" page="/lender_detail.php?show=<?php echo $lender['id'] ?>" />
+  <load-page event="activate" page="/lender_detail.php?show=<?php echo $lender['uid'] ?>" />
 </placard>
 <?  
 }

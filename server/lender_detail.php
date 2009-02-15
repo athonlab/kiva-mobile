@@ -1,5 +1,7 @@
 <?php
 require_once('kiva_display_blocks.php');
+include('bpxml-header.php');
+
 // Query params
 $query_params = '';
 
@@ -17,13 +19,30 @@ $json_decoded = json_decode($json_response, true);
 
 //print_r($json_decoded);
 
+?>
+
+<module>
+  <header layout="simple">
+    <layout-items>
+      <block class="title">My Kiva</block>
+    </layout-items>
+  </header>
+
+<?php
+
 foreach($json_decoded['lenders'] as $lender) {
-  // print_r($lender);
+  //print_r($lender);
   // http://www.kiva.org/img/200w200h/<id>.jpg 
   _show_lender_detail($lender);
 }
 ?>
-<h4>Loans</h4>
+<module>
+<header layout="simple">
+  <layout-items>
+    <block class="title">Loans Given</block>
+  </layout-items>
+</header>
+
 <?
 $json_request_url = "http://api.kivaws.org/v1/lenders/$lender_id/loans.json";
 // echo "$request_url\n\n";
@@ -36,10 +55,15 @@ $json_decoded = json_decode($json_response, true);
 //print_r($json_decoded);
 
 foreach($json_decoded['loans'] as $loan) {
-  //print_r($loan);
+  // print_r($loan);
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
   _show_loan($loan);
-  
+
 }
+?>
+</module>
+</module>
+<?
+ include('bpxml-footer.php');
 ?>
