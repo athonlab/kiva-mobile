@@ -57,7 +57,7 @@ $json_decoded = json_decode($json_response, true);
     <latitude>8</latitude>
     <longitude>2</longitude>
   </center>
-  <map-zoom>15</map-zoom>
+  <map-zoom>17</map-zoom>
   <map-mode>map</map-mode>
   <map-showtraffic>false</map-showtraffic>
 <?
