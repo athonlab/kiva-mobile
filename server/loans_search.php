@@ -49,12 +49,12 @@ foreach ($headers as $header => $value) {
       </layout-items>
     </header>
 
-     <input ref='status' appearance='compact'>
+     <input ref='status' appearance='compact' model='page'>
        <label>Status</label>
        <placeholder>fundraising, funded, in_repayment, paid, defaulted</placeholder>
      </input>
 
-     <select ref='gender'>
+     <select ref='gender' model='page'>
       <label>Gender</label>
       <item>
         <label>Male</label>
@@ -66,17 +66,17 @@ foreach ($headers as $header => $value) {
       </item>
     </select>
 
-    <input ref='country_code' appearance='compact'>
+    <input ref='country_code' appearance='compact' model='page'>
       <label>Country code</label>
       <placeholder>PE,IN,GH,GT</placeholder>
     </input>
 
-    <input ref='sector' appearance='compact'>
+    <input ref='sector' appearance='compact' model='page'>
       <label>Sector</label>
       <placeholder></placeholder>
     </input>
 
-     <submit>
+     <submit model='page'>
       <label>Search</label>
      </submit>
      
