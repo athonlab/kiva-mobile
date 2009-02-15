@@ -42,9 +42,9 @@ function _show_lender($lender) {
   <layout-items>
     <image resource="<?php _show_image($lender['image']) ?>" size="small"/>
     <block class="title"><?php echo $lender['name'] ?></block>
-    <block class="subtext"><?php echo $lender['whereabout'] ?>, <?php echo $lender['country_code'] ?></block>
-    <load-page event="activate" page="/lender_detail.php?show=<?php echo $lender['id'] ?>" />
+    <block class="subtext"><?php echo $lender['whereabouts'] ?>, <?php echo $lender['country_code'] ?></block>
   </layout-items>
+  <load-page event="activate" page="/lender_detail.php?show=<?php echo $lender['id'] ?>" />
 </placard>
 <?  
 }
@@ -55,7 +55,7 @@ function _show_lender_detail($lender) {
   <layout-items>
     <image resource="<?php _show_image($lender['image']) ?>" size="xx-large"/>
     <block class="title"><?php echo $lender['name'] ?></block>
-    <block class="subdued"><?php echo $lender['whereabout'] ?>, <?php echo $lender['country_code'] ?></block>
+    <block class="subdued"><?php echo $lender['whereabouts'] ?>, <?php echo $lender['country_code'] ?></block>
     <block class="link"><?php echo $lender['personal_url'] ?></block>
     <block class="description"><?php echo $lender['occupation'] ?>: <em><?php echo $lender['occupation_info'] ?></em></block>
     <block class="description"><?php echo $lender['loan_because'] ?></block>

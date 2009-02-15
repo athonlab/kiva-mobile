@@ -24,7 +24,7 @@ $json_decoded = json_decode($json_response, true);
 <module>
   <header layout="simple">
     <layout-items>
-      <block class="title">My Kiva</block>
+      <block class="title">Loan Details</block>
     </layout-items>
   </header>
 
@@ -35,7 +35,7 @@ foreach($json_decoded['loans'] as $loan) {
   // http://kiva.org/app.php?page=businesses&action=about&id=<id>
   // http://www.kiva.org/img/80w80h/<id>.jpg 
   _show_loan_detail($loan);
-  $load_id = $loan['id'];
+  $loan_id = $loan['id'];
 }
 
 ?>
