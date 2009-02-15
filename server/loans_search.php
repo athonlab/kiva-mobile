@@ -44,7 +44,7 @@ foreach ($headers as $header => $value) {
         <block class="title">Search</block>
       </layout-items>
     </header>
-    <!--
+
      <input ref='status' appearance='compact' model='page'>
        <label>Status</label>
        <placeholder>fundraising, funded, in_repayment, paid, defaulted</placeholder>
@@ -71,7 +71,6 @@ foreach ($headers as $header => $value) {
       <label>Sector</label>
       <placeholder></placeholder>
     </input>
-    -->
     
     <input ref='q' appearance='compact' model='page'>
       <label>Query</label>

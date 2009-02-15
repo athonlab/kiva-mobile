@@ -4,28 +4,38 @@ include('bpxml-header.php');
 
 // filters
 if (isset($_GET['status'])) {
-  $status = $_GET['status'];
-  $query_params .= "status=$status&";
+  if ($_GET['status'] != '') {
+    $status = $_GET['status'];
+    $query_params .= "status=$status&";
+  }
 }
 
 if (isset($_GET['gender'])) {
-  $gender = implode($_GET['gender'], ',');
-  $query_params .= "gender=$gender&";
+  if ($_GET['gender'] != '') {
+    $gender = implode($_GET['gender'], ',');
+    $query_params .= "gender=$gender&";
+  }
 }
 
 if (isset($_GET['sector'])) {
-  $sector = $_GET['sector'];
-  $query_params .= "sector=$sector&";
+  if ($_GET['sector'] != '') {
+    $sector = $_GET['sector'];
+    $query_params .= "sector=$sector&";
+  }
 }
 
 if (isset($_GET['country_code'])) {
-  $country_code = $_GET['country_code'];
-  $query_params .= "country_code=$country_code&";
+  if ($_GET['country_code'] != '') {
+    $country_code = $_GET['country_code'];
+    $query_params .= "country_code=$country_code&";
+  }
 }
 
 if (isset($_GET['q'])) {
-  $q = $_GET['q'];
-  $query_params .= "q=$q&";
+  if ($_GET['q'] != '') {
+    $q = $_GET['q'];
+    $query_params .= "q=$q&";
+  }
 }
 
 // params
