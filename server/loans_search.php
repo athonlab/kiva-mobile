@@ -15,6 +15,10 @@ foreach ($headers as $header => $value) {
     <model id='page'>
      <instance>
       <data xmlns=''>
+       <status/>
+       <gender/>
+       <sector/>
+       <country_code/>
        <q/>
       </data>
      </instance>
@@ -71,11 +75,12 @@ foreach ($headers as $header => $value) {
       <label>Sector</label>
       <placeholder></placeholder>
     </input>
-    
+
     <input ref='q' appearance='compact' model='page'>
       <label>Query</label>
       <placeholder></placeholder>
     </input>
+
 
      <submit model='page'>
       <label>Search</label>
