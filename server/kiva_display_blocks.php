@@ -58,7 +58,7 @@ function _show_lender($lender) {
 <placard layout="card" class="link">
   <layout-items>
     <image resource="<?php _show_image($lender['image']) ?>" size="medium"/>
-    <block class="title"><?php echo $lender['name'] ?></block>
+    <block class="title"><?php echo htmlentities($lender['name']) ?></block>
     <block class="subtext"><?php echo $lender['whereabouts'] ?>, <?php echo $lender['country_code'] ?></block>
   </layout-items>
   <load-page event="activate" page="/lender_detail.php?show=<?php echo $lender['uid'] ?>" />
